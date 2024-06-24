@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic calculator</title>
+    <link rel="icon" href="images/calculator.jpg" type="image/icon type">
+    <style>
+        body{
+            background-image: linear-gradient(red,orange,pink,red,yellow,green,yellow,green); 
+        }
+        
+        h1 {  
+    text-align: center;  
+    padding: 23px;  
+    color: white;  
+    }  
+  
+#clear{  
+width: 490px;  
+border: 3px solid gray;  
+    border-radius: 3px;  
+    padding: 20px;  
+    background-color: white;
+    background-image: linear-gradient(black);
+    border-radius: 20px; 
+    outline: 4px solid pink;
+
+}  
+  
+.formstyle  
+{  
+width: 500px;  
+height: 800px;  
+margin: auto;  
+border: 3px solid white; 
+border-radius: 5px;  
+padding: 70px;
+outline: 7px solid black;
+background-color: gray;
+background-image: linear-gradient( green); 
+}  
+  
+  
+  
+input  
+{  
+width: 112px;  
+background-color:white;
+color: beige;
+background-image: linear-gradient(skyblue);   
+color:black; 
+border: 3px solid black;  
+    border-radius: 5px;  
+    padding: 20px;  
+    margin: 5px;  
+    font-size: 20px;
+    outline: 3px solid black;
+    border-radius: 20px;  
+}    
+#calc{  
+width: 450px;  
+border: 5px solid black;  
+    border-radius: 20px;  
+    padding: 20px;  
+    margin: auto;  
+}
+.size{
+font-size: 24px;
+} 
+.bold{
+    font-weight: bold;
+} 
+.size1{
+    outline:3px solid orange;
+}
+.preview{
+    width: 270px;
+    padding: 30px;
+}
+@media screen  and (max-width:600px) {
+    .formstyle  
+{  
+width: 95%; 
+height: 810px;   
+margin:0;  
+border: 3px solid orange; 
+border-radius: 5px;  
+outline: 7px solid red;
+padding:0;
+padding-top: 35px;
+padding-left: 5px;
+
+}
+input  
+{  
+width: 21%;    
+    margin-left:0px;  
+    font-size: 17px;
+    outline: 3px solid lightgreen;
+    border-radius: 20px;
+    text-align:center; 
+    padding: 0;
+    height: 70px;
+}    
+#calc{  
+width: 90%;  
+border: 5px solid black;  
+    border-radius: 20px;  
+    padding: 0px;  
+    margin: auto;
+    height: 50px;  
+}
+.size{
+font-size: 15px;
+} 
+.bold{
+    font-weight: bold;
+} 
+.size1{
+    outline:3px solid orange;
+}
+.preview{
+    width: 100%;
+    padding: 30px;
+}
+    
+h1 {  
+    text-align: center;  
+    padding: 0px;  
+    color: white;
+    font-size: 16px;  
+    }
+
+    #clear{  
+width: 90%;  
+border: 3px solid gray;  
+    border-radius: 3px;  
+    padding: 0px;  
+    border-radius: 20px; 
+    outline: 4px solid pink;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}    
+
+}
+    </style>
+</head>
+<body>
+    <h1> Basic calculation using javascript </h1>  
+    <div class= "formstyle">  
+    <form name = "form1">  
+          
+      <input id = "calc" class="preview" type ="text" name = "answer"> <br> <br>  
+
+      <input type = "button" value = "1" onclick = "form1.answer.value += '1' ">  
+      <input type = "button" value = "2" onclick = "form1.answer.value += '2' ">  
+      <input type = "button" value = "3" onclick = "form1.answer.value += '3' ">  
+       <input type = "button" value = "+" onclick = "form1.answer.value += '+' ">
+       
+      <br> <br>  
+        
+      <input type = "button" value = "4" onclick = "form1.answer.value += '4' ">  
+      <input type = "button" value = "5" onclick = "form1.answer.value += '5' ">  
+      <input type = "button" value = "6" onclick = "form1.answer.value += '6' ">  
+      <input class="bold" type = "button" value = "-" onclick = "form1.answer.value += '-' ">
+       
+      <br> <br>  
+        
+      <input type = "button" value = "7" onclick = "form1.answer.value += '7' ">  
+      <input type = "button" value = "8" onclick = "form1.answer.value += '8' ">  
+      <input type = "button" value = "9" onclick = "form1.answer.value += '9' ">  
+      <input class="bold" type = "button" value = "*" onclick = "form1.answer.value += '*' ">  
+      <br> <br>  
+
+      <input type = "button" value = "0" onclick = "form1.answer.value += '0' ">
+      <input  type="button" type="button" value="cut" onclick="deleteCharacter()">  
+        <input class="bold" type = "button" value = "." onclick = "form1.answer.value += '.' ">  
+        <input class="bold" type = "button" value = "/" onclick = "form1.answer.value += '/' ">
+        <br><br>
+            <input type="button" value="Log" onclick="calculateLog()">
+            <input type="button" value="Mod" onclick="calculateMod()"> 
+            <input type="button" value="ln" onclick="calculateLn()">
+            <input type="button" value="e^" onclick="calculateExponential()">
+      <br><br>
+      <input id="move" type = "button"  value ="%"  onclick = "myfunction()">
+      <input type="button" value="sqrt" onclick="calculateSquare()">
+      <input type="button" value="Cube" onclick="calculateCube()">
+      <input type="button" value="√" onclick="calculateSquareRoot()">
+<br><br>
+      <input class="bold" type = "button" value = "=" onclick = "form1.answer.value = eval(form1.answer.value) ">    
+      <input type="button" value="3√" onclick="calculateCubeRoot()">
+      <input type="button" value="Factorial" onclick="calculateFactorial()">
+      <input type="button" value="%" onclick="calculatePercentage()">
+      
+<br><br>
+      <input class="size size1" type = "button" value = "Clear All" onclick = "form1.answer.value = ' ' " id= "clear">  
+      <br>   
+        
+    </form> 
+    <script>
+        function myfunction() {
+            var a = parseFloat(prompt('Please enter the a value'));
+            var b = parseFloat(prompt('Please enter the b value'));
+            
+            if (isNaN(a) || isNaN(b)) {
+                alert('Invalid input. Please enter valid numbers.');
+                return;
+            }
+
+            var c = (a * b) / 100;
+            document.form1.answer.value = c;
+        }
+        function deleteCharacter() {
+        var inputField = document.form1.answer;
+        var currentText = inputField.value;
+        
+        
+        if (currentText.length > 0) {
+
+            inputField.value = currentText.slice(0, -1);
+        }
+    }
+    function calculateSquareRoot() {
+            var input = form1.answer.value;
+            var number = parseFloat(input);
+
+            if (!isNaN(number)) {
+                var squareRoot = Math.sqrt(number);
+                form1.answer.value = squareRoot;
+            } else {
+                alert('Invalid input. Please enter a valid number.');
+            }
+        }
+        function calculateLog() {
+            var input = form1.answer.value;
+            var number = parseFloat(input);
+
+            if (!isNaN(number) && number > 0) {
+                var result = Math.log(number);
+                form1.answer.value = result;
+            } else {
+                alert('Invalid input. Please enter a valid positive number.');
+            }
+        }
+
+        function calculateMod() {
+            var input = form1.answer.value;
+            var parts = input.split('%');
+            
+            if (parts.length === 2) {
+                var a = parseFloat(parts[0]);
+                var b = parseFloat(parts[1]);
+                
+                if (!isNaN(a) && !isNaN(b)) {
+                    var result = a % b;
+                    form1.answer.value = result;
+                } else {
+                    alert('Invalid input. Please enter valid numbers.');
+                }
+            } else {
+                alert('Invalid input for Mod. Please enter two numbers separated by %.');
+            }
+        }
+
+        function calculateLn() {
+            var input = form1.answer.value;
+            var number = parseFloat(input);
+
+            if (!isNaN(number)) {
+                var result = Math.log(number);
+                form1.answer.value = result;
+            } else {
+                alert('Invalid input. Please enter a valid number.');
+            }
+        }
+
+        function calculateExponential() {
+            var input = form1.answer.value;
+            var number = parseFloat(input);
+
+            if (!isNaN(number)) {
+                var result = Math.exp(number);
+                form1.answer.value = result;
+            } else {
+                alert('Invalid input. Please enter a valid number.');
+            }
+        }
+        function calculateSquare() {
+            var input = form1.answer.value;
+            var number = parseFloat(input);
+
+            if (!isNaN(number)) {
+                var result = number * number;
+                form1.answer.value = result;
+            } else {
+                alert('Invalid input. Please enter a valid number.');
+            }
+        }
+
+        function calculateCube() {
+            var input = form1.answer.value;
+            var number = parseFloat(input);
+
+            if (!isNaN(number)) {
+                var result = number * number * number;
+                form1.answer.value = result;
+            } else {
+                alert('Invalid input. Please enter a valid number.');
+            }
+        }
+        function calculateCubeRoot() {
+            var input = form1.answer.value;
+            var number = parseFloat(input);
+
+            if (!isNaN(number)) {
+                var result = Math.cbrt(number);
+                form1.answer.value = result;
+            } else {
+                alert('Invalid input. Please enter a valid number.');
+            }
+        }
+        function calculateFactorial() {
+            var input = form1.answer.value;
+            var number = parseFloat(input);
+
+            if (!isNaN(number) && number >= 0 && Number.isInteger(number)) {
+                var result = 1;
+                for (var i = 1; i <= number; i++) {
+                    result *= i;
+                }
+                form1.answer.value = result;
+            } else {
+                alert('Invalid input for factorial. Please enter a non-negative integer.');
+            }
+        }
+        function calculatePercentage() {
+            var input = form1.answer.value;
+            var parts = input.split('%');
+            
+            if (parts.length === 2) {
+                var number = parseFloat(parts[0]);
+                var percentage = parseFloat(parts[1]);
+                
+                if (!isNaN(number) && !isNaN(percentage)) {
+                    var result = (number * percentage) / 100;
+                    form1.answer.value = result;
+                } else {
+                    alert('Invalid input. Please enter valid numbers separated by %.');
+                }
+            } else {
+                alert('Invalid input for percentage. Please enter two numbers separated by %.');
+            }
+        }
+
+       
+    </script> 
+    </div>   
+</body>
+</html>
